@@ -64,3 +64,15 @@ query {
 	}
 }
 ```
+
+# branch mutation (add new branch)
+
+```
+mutation {
+	createBranch(id: 4, name: "Silver", code: "00917") {
+		id
+		name
+		code
+	}
+}
+```
