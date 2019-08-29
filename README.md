@@ -1,6 +1,9 @@
 # staff-app
  Staff Management
 
+# install packages
+`npm install`
+
 # run server
 `node server`
 
