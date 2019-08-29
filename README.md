@@ -31,7 +31,8 @@ query {
 }
 ```
 
-```query {
+```
+query {
 	branches {
 		name
 		employees {
