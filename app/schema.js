@@ -9,6 +9,7 @@ module.exports = `
 		id: Int
 		name: String
 		code: String
+		employees: [Employee]
 	}
 
 	type Employee {

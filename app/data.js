@@ -23,13 +23,15 @@ module.exports = {
 			id: 1,
 			firstname: "John",
 			lastname: "Smith",
-			middlename: null
+			middlename: null,
+			branch: 3
 		},
 		{
 			id: 2,
 			firstname: "Catarina",
 			lastname: "Vivian",
-			middlename: null
+			middlename: null,
+			branch: 1
 		}
 	]
 };

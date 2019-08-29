@@ -5,5 +5,9 @@ module.exports = {
 		staff: () => data.users,
 		branches: () => data.branches,
 		employee: (_,{ id }) => data.users.find( user => user.id === id )
+	},
+
+	Branch: {
+		employees: ( branch ) => data.users.filter( user => user.branch === branch.id )
 	}
 }
