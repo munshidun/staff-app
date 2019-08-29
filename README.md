@@ -42,3 +42,14 @@ query {
 	}
 }
 ```
+
+```
+query {
+	staff {
+		firstname
+		branch {
+			name
+		}
+	}
+}
+```
