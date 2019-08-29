@@ -7,6 +7,6 @@ module.exports = `
 		id: Int
 		firstname: String
 		lastname: String
-		middlename: String!
+		middlename: String
 	}
 `;
