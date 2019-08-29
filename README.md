@@ -7,6 +7,8 @@
 # run server
 `node server`
 
+open [localhost:4000]
+
 # query examples
 
 `query {
