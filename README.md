@@ -11,21 +11,21 @@ open [http://localhost:4000](http://localhost:4000)
 
 # query examples
 
-`query {
+```query {
 	employee(id: 1) {
 		firstname
 		lastname
 	}
-}`
+}```
 
-`query {
+```query {
 	staff {
-  id
-  firstname
-  lastname
-  middlename
- }
-}`
+  		id
+  		firstname
+  		lastname
+  		middlename
+ 	}
+}```
 
 ```query {
 	branches {
