@@ -1,6 +1,7 @@
 module.exports = `
 	type Query {
 		staff: [Employee]
+		employee(id: Int): Employee
 	}
 
 	type Employee {
