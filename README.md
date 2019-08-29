@@ -7,7 +7,7 @@
 # run server
 `node server`
 
-open [localhost:4000]
+open [http://localhost:4000](http://localhost:4000)
 
 # query examples
 
