@@ -53,3 +53,14 @@ query {
 	}
 }
 ```
+
+```
+query {
+	employee(id: 2) {
+		firstname
+		branch {
+			name
+		}
+	}
+}
+```
