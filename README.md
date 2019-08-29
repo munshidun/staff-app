@@ -26,3 +26,13 @@ open [http://localhost:4000](http://localhost:4000)
   middlename
  }
 }`
+
+```query {
+	branches {
+		name
+		employees {
+			firstname
+			lastname
+		}
+	}
+}```
