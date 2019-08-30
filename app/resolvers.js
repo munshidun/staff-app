@@ -1,14 +1,22 @@
-const data = require( './data.js' );
 const pg = require('pg-promise')();
 const db = pg('postgres://postgres:postgres@localhost:5432/staffapp');
 
 module.exports = {
 
 	Mutation: {
-		createBranch(_, { id, name, code }) {
-			const branch = { id, name, code };
-			data.branches.push( branch );
-			return branch;
+		async createBranch(_, { name, code }) {
+			
+			try {
+
+				const branch = await db.one('INSERT INTO branches(name, code) VALUES($1, $2) RETURNING id', [name, code]);
+
+				console.log( typeof branch.id );
+
+				return {id: branch.id, name, code};
+			}
+			catch(error) {
+				console.error(error);
+			}
 		}
 	},
 
