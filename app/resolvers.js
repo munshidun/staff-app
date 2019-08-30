@@ -10,8 +10,6 @@ module.exports = {
 
 				const branch = await db.one('INSERT INTO branches(name, code) VALUES($1, $2) RETURNING id', [name, code]);
 
-				console.log( typeof branch.id );
-
 				return {id: branch.id, name, code};
 			}
 			catch(error) {
