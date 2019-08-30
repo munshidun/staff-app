@@ -1,4 +1,6 @@
 const data = require( './data.js' );
+const pg = require('pg-promise')();
+const db = pg('postgres://postgres:postgres@localhost:5432/staffapp');
 
 module.exports = {
 
@@ -11,16 +13,16 @@ module.exports = {
 	},
 
 	Query: {
-		staff: () => data.users,
-		branches: () => data.branches,
-		employee: (_,{ id }) => data.users.find( user => user.id === id ),
+		staff: async () => await db.any('SELECT * FROM employees'),
+		branches: async () => await db.any('SELECT * FROM branches'),
+		employee: async (_,{ id }) => await db.one('SELECT * FROM employees WHERE id = $1', [id]),
 	},
 
 	Branch: {
-		employees: ( branch ) => data.users.filter( user => user.branch === branch.id ),
+		employees: async ( branch ) => await db.any('SELECT * FROM employees WHERE branch = $1', [branch.id]),
 	},
 
 	Employee: {
-		branch: ( employee ) => data.branches.find( branch => branch.id === employee.branch ),
+		branch: async ( employee ) => await db.one('SELECT * FROM branches WHERE id = $1', [employee.branch]),
 	}
 }
