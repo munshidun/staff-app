@@ -1,7 +1,7 @@
 module.exports = `
 
 	type Mutation {
-		createBranch(id: Int, name: String, code: String): Branch
+		createBranch(name: String, code: String): Branch
 	}
 
 	type Query {
@@ -11,14 +11,14 @@ module.exports = `
 	}
 
 	type Branch {
-		id: Int
+		id: String
 		name: String
 		code: String
 		employees: [Employee]
 	}
 
 	type Employee {
-		id: Int
+		id: String
 		firstname: String
 		lastname: String
 		middlename: String,
